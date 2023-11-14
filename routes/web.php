@@ -6,6 +6,8 @@ use App\Http\Controllers\Admin\PostTypeController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\BookController;
 use App\Http\Controllers\Admin\AuthorController;
+use App\Http\Controllers\AuthController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,11 +18,51 @@ use App\Http\Controllers\Admin\AuthorController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+//auth
+Route::match(["get","post"],"/login",[AuthController::class,"login"])->name("login");
+Route::match(["get","post"],"/register",[AuthController::class,"register"])->name("register");
 
 
-Route::get('/home', function () {
-    return view('home');
-});
+//client
+Route::get('/', function () {
+    return view('client.index');
+})->name('home');
+Route::get('/product',function(){
+    return view('client.products');
+})->name('product');
+Route::get('/productdetail',function(){
+    return view('client.productdetail');
+})->name('/productDetail');
+Route::get('/newslist',function(){
+    return view('client.newslist');
+})->name('newsList');
+Route::get('/newsgrid',function(){
+    return view('client.newsgrid');
+})->name('newsGrid');
+Route::get('/newsdetail',function(){
+    return view('client.newsdetail');
+})->name('newsdetail');
+Route::get('/contactus',function(){
+    return view('client.contactus');
+})->name('contactus');
+Route::get('/authors',function(){
+    return view('client.authors');
+})->name('authors');
+Route::get('/authordetail',function(){
+    return view('client.authordetail');
+})->name('authorDetail');
+Route::get('/aboutus',function(){
+    return view('client.aboutus');
+})->name('aboutUs');
+Route::get('/error',function(){
+    return view('client.404error');
+})->name('error');
+Route::get('/comingsoon',function(){
+    return view('client.comingsoon');
+})->name('comingSoon');
+
+
+//admin
 Route::prefix('admin')->group(function () {
     /*
      * Module Category
