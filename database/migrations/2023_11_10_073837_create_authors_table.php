@@ -15,11 +15,14 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('slug')->unique();
-            $table->string('biography');
+            $table->longText('biography');
             $table->string('nationality');
             $table->string('image')->nullable();
             $table->dateTime('birth_date')->nullable();
             $table->string('email')->unique();
+            $table->text('facebook')->nullable();
+            $table->text('instagram')->nullable();
+            $table->text('twitter')->nullable();
             $table->string('phone')->nullable();
             $table->tinyInteger('status');
             $table->softDeletes();
