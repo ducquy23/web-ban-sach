@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\BookController;
 use App\Http\Controllers\Admin\AuthorController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Client\HomeController;
+use App\Http\Controllers\Client\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,9 +20,9 @@ use App\Http\Controllers\Client\HomeController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-//auth
-Route::match(["get", "post"], "/login", [AuthController::class, "login"])->name("login");
-Route::match(["get", "post"], "/register", [AuthController::class, "register"])->name("register");
+Route::match(["get","post"],"/login",[AuthController::class,"login"])->name("login");
+Route::match(["get","post"],"/register",[AuthController::class,"register"])->name("register");
+Route::get('/logout',[AuthController::class,'logout'])->name('logout');
 
 
 //client
@@ -60,7 +61,10 @@ Route::get('/comingsoon', function () {
     return view('client.comingsoon');
 })->name('comingSoon');
 
-
+//profile
+Route::get('/profile',[UserController::class,'profile'])->name('profile');
+Route::match(["get","post"],"/update-profile",[UserController::class,"updateProfile"])->name("profile.update");
+Route::match(["get","post"],"/change-password",[UserController::class,"changePassword"])->name("profile.changePassword");
 //admin
 Route::prefix('admin')->group(function () {
     /*

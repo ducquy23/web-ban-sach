@@ -22,7 +22,9 @@
 
     <div id="tg-wrapper" class=" tg-wrapper tg-haslayout">
     @include('layouts.client.header')
-    @yield('content')
+    <div class="container">
+        @yield('content')
+    </div>
     @include('layouts.client.footer')
     </div>
     <!--************************************
@@ -40,6 +42,7 @@
     <script src="{{asset('js/appear.js')}}"></script>
     <script src="{{asset('js/gmap3.js')}}"></script>
     <script src="{{asset('js/main.js')}}"></script>
+    @stack('scripts')
 </body>
 
 </html>
