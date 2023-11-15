@@ -11,6 +11,8 @@
         "vite": "^4.0.0"
     },
     "dependencies": {
+        "inputmask": "^5.0.8",
+        "jquery": "^3.7.1",
         "toastr": "^2.1.4"
     }
 }

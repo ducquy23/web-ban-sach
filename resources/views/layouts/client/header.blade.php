@@ -48,9 +48,19 @@
 						<a href="{{route('login')}}"><button class="btn btn-success">Login</button></a>
 					</div>
 					@else
-					<div class="tg-userlogin">
-						<figure><a href=""><img src="images/users/img-01.jpg" alt="image description"></a></figure>
-						<span>Hi, {{ Auth::user()->name}}</span>
+					<div class=" dropdown  tg-themedropdown tg-currencydropdown" style="float: right;">
+						<a class="" href="" id="tg-currenty" class="tg-btnthemedropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<img style="border-radius: 50%; width: 50px;" src="images/users/img-01.jpg" alt="image description">
+							<span>Hi, {{ Auth::user()->name}}</span>
+						</a>
+						<ul class="dropdown-menu tg-themedropdownmenu" aria-labelledby="tg-currenty">
+							<li>
+								<a href="{{route('profile')}}"><span>Thông tin cá nhân</span></a>
+							</li>
+							<li>
+								<a href="{{route('logout')}}"><span>Đăng xuất</span></a>
+							</li>
+						</ul>
 					</div>
 					@endif
 				</div>
