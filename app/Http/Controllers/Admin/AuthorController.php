@@ -53,6 +53,9 @@ class AuthorController extends Controller
             $author->slug = $request->slug;
             $author->status = $request->status;
             $author->image = $request->image;
+            $author->facebook = $request->facebook;
+            $author->instagram = $request->instagram;
+            $author->twitter = $request->twitter;
 
             if ($author->save()) {
                 toastr()->success('Thêm mới tác giả thành công!', 'success');

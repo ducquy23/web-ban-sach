@@ -41,6 +41,18 @@
                         <input type="text" id="nationality" name="nationality" class="form-control" value="{{ $author->nationality }}">
                     </div>
                     <div class="form-group">
+                        <label for="facebook">Facebook</label>
+                        <input type="text" id="facebook" name="facebook" class="form-control" value="{{ $author->facebook }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="instagram">Instagram</label>
+                        <input type="text" id="instagram" name="instagram" class="form-control" value="{{ $author->instagram }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="twitter">Twitter</label>
+                        <input type="text" id="twitter" name="twitter" class="form-control" value="{{ $author->twitter }}">
+                    </div>
+                    <div class="form-group">
                         <label for="birth_date">Ngày sinh</label>
                         <input type="date" id="birth_date" name="birth_date" class="form-control" value="{{ substr($author->birth_date, 0, 10) }}">
                     </div>

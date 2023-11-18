@@ -109,6 +109,14 @@
                                 </select>
                             </div>
                             <div class="form-group">
+                                <label for="featured">Đặc sắc<span class="text-danger">(*)</span></label>
+                                <select id="featured" class="form-control custom-select" name="featured">
+                                    <option selected="" disabled="">Chọn 1</option>
+                                    <option value="1" {{ ($book->featured == 1 ? 'selected' : '') }}>Đặc sắc</option>
+                                    <option value="0" {{ ($book->featured == 0 ? 'selected' : '') }}>Không đặc sắc</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
                                 <label for="book_id">Danh mục<span class="text-danger">(*)</span></label>
                                 <div class="container">
                                     <div class="row">
