@@ -59,6 +59,7 @@ class BookController extends Controller
             $book->page_count = $request->page_count;
             $book->publisher = $request->publisher;
             $book->language = $request->language;
+            $book->featured = $request->featured;
             $book->description_short = $request->description_short;
             $book->description = $request->description;
             $book->status = $request->status;

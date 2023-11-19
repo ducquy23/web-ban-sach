@@ -26,6 +26,7 @@ return new class extends Migration
             $table->string('language');
             $table->text('description_short')->nullable();
             $table->text('description')->nullable();
+            $table->tinyInteger('featured')->default(0);
             $table->unsignedBigInteger('author_id');
             $table->tinyInteger('status');
             $table->softDeletes();

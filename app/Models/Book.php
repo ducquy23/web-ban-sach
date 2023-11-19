@@ -27,7 +27,8 @@ class Book extends Model
         'description_short',
         'description',
         'author_id',
-        'status'
+        'status',
+        'featured'
     ];
     public function images()
     {
@@ -41,4 +42,5 @@ class Book extends Model
     {
         return $this->belongsTo(Author::class, 'author_id', 'id');
     }
+
 }

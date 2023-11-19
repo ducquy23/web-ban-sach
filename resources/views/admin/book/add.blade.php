@@ -92,6 +92,14 @@
                                 </select>
                             </div>
                             <div class="form-group">
+                                <label for="featured">Đặc sắc<span class="text-danger">(*)</span></label>
+                                <select id="featured" class="form-control custom-select" name="featured">
+                                    <option selected="" disabled="">Chọn 1</option>
+                                    <option value="0">Không đặc sắc</option>
+                                    <option value="1">Đặc sắc</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
                                 <label for="category_id">Danh mục<span class="text-danger">(*)</span></label>
                                 <div class="container">
                                     <div class="row">

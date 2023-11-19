@@ -9,7 +9,8 @@ use Illuminate\Http\Request;
 class AuthorController extends Controller
 {
     public function index() {
-        $authors = Author::all();
-        return view('client.authors',compact('authors'));
+        $authors =  Author::withCount('books')->get();
+        $authorsWithBooks = Author::with('books')->get();
+        return view('client.authors',compact('authors','authorsWithBooks'));
     }
 }

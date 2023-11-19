@@ -16,4 +16,13 @@ class Category extends Model
     public $timestamps = true;
 
     public $fillable = ['name', 'slug', 'image_url', 'parent_id', 'description', 'status'];
+    public function books()
+    {
+        return $this->belongsToMany(Book::class, 'category_books');
+    }
+
+    public function scopeWithBookCount($query)
+    {
+        return $query->withCount('books');
+    }
 }

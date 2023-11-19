@@ -12,6 +12,11 @@ class Author extends Model
     protected $table = 'authors';
     public $timestamps = 'true';
     public $fillable = [
-        'name','slug','biography','nationality','image','birth_date','email','phone','status'
+        'name','slug','biography','nationality','image','birth_date','email','phone','status','facebook','instagram','twitter'
     ];
+    public function books()
+    {
+        return $this->hasMany(Book::class);
+    }
+
 }

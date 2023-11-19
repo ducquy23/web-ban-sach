@@ -40,6 +40,18 @@
                             <input type="text" id="nationality" name="nationality" class="form-control">
                         </div>
                         <div class="form-group">
+                            <label for="facebook">Facebook</label>
+                            <input type="text" id="facebook" name="facebook" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="instagram">Instagram</label>
+                            <input type="text" id="instagram" name="instagram" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="twitter">Twitter</label>
+                            <input type="text" id="twitter" name="twitter" class="form-control">
+                        </div>
+                        <div class="form-group">
                             <label for="birth_date">Ngày sinh</label>
                             <input type="date" id="birth_date" name="birth_date" class="form-control">
                         </div>
