@@ -72,7 +72,7 @@
     <section class="tg-bglight tg-haslayout">
         <div class="container">
             <div class="row">
-
+                @if($bookFeatured != null)
                 <div class="tg-featureditm">
                     <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 hidden-sm hidden-xs">
                         {{--                        <figure><img src="images/img-02.png" alt="image description"></figure>--}}
@@ -100,6 +100,7 @@
                         </div>
                     </div>
                 </div>
+                @endif
             </div>
         </div>
     </section>

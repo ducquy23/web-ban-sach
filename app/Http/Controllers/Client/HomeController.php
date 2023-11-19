@@ -19,12 +19,14 @@ class HomeController extends Controller
         $authorsWithBooks = Author::with('books')->get();
         $authors =  Author::withCount('books')->get();
         $posts = Post::all();
+        $categories = Category::all();
         return view('client.home',compact('bestSellingBooks'
             ,'bookFeatured'
             ,'newestBooks'
             ,'authorsWithBooks'
             ,'authors'
             ,'posts'
+            ,'categories'
         ));
     }
 }
