@@ -3,10 +3,12 @@
 namespace App\Http\Controllers\Client;
 
 use App\Http\Controllers\Controller;
+use App\Models\Book;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Session;
 
 class UserController extends Controller
 {
@@ -64,5 +66,30 @@ class UserController extends Controller
             return view('client.profile.changePassword');
         }
         return view('client.profile.changePassword',compact('user'));
+    }
+
+    public function cart(){
+        $cart = session::get('cart',[]);
+        return view('client.cart',compact('cart'));
+    }
+
+    public function addCart(Request $request,$id){
+        $book = Book::find($id) ;
+        $cart = session::get('cart',[]);
+        if(isset($cart[$book->id])){
+            $cart[$book->id]['quantity']++;
+        }else{
+            $cart[$book->id] = [
+                'title' => $book->title,
+                'price' => $book->price,
+                'quantity'=>$book->quantity
+            ];
+            //dd($cart[$book->id]);
+        }
+        session::put('cart',$cart);
+        
+        toastr()->success('Sản phẩm đã được thêm vào giỏ hàng!', 'success');
+        return redirect(route('home'));
+        
     }
 }

@@ -23,9 +23,11 @@ use App\Http\Controllers\Client\UserController;
 Route::match(["get","post"],"/login",[AuthController::class,"login"])->name("login");
 Route::match(["get","post"],"/register",[AuthController::class,"register"])->name("register");
 Route::get('/logout',[AuthController::class,'logout'])->name('logout');
-
-
+//cart
+Route::match(["get","post"],'/cart',[UserController::class,"cart"])->name('cart');
+Route::match(['get','post'],'/add-to-cart/{id}',[UserController::class,"addCart"])->name('cart.add');
 //client
+
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::prefix('home')->group(function () {
     Route::get('/author', [\App\Http\Controllers\Client\AuthorController::class, 'index'])->name('home.author');
