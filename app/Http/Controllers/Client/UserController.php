@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Client;
 
 use App\Http\Controllers\Controller;
 use App\Models\Book;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -15,7 +16,7 @@ class UserController extends Controller
     public function profile(){
         $user = auth()->user();
 
-        return view("client.profile.profile",compact("user"));
+        return view("client.profile.profile",compact("user",));
     }
     public function updateProfile(Request $request){
         $user = auth()->user();
@@ -87,9 +88,9 @@ class UserController extends Controller
             //dd($cart[$book->id]);
         }
         session::put('cart',$cart);
-        
+
         toastr()->success('Sản phẩm đã được thêm vào giỏ hàng!', 'success');
         return redirect(route('home'));
-        
+
     }
 }

@@ -75,7 +75,7 @@
                 @if($bookFeatured != null)
                 <div class="tg-featureditm">
                     <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 hidden-sm hidden-xs">
-                        {{--                        <figure><img src="images/img-02.png" alt="image description"></figure>--}}
+{{--                                                <figure><img src="images/img-02.png" alt="image description"></figure>--}}
                         <figure><img style="width: 300px" src="{{ Storage::url($bookFeatured->image_url) }}"
                                      alt="image description"></figure>
                     </div>

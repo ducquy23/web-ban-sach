@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -39,7 +40,7 @@ class AuthController extends Controller
                 return redirect()->route('login');
             }
         }
-        return view('auth.login');
+        return view('auth.login',);
     }
     public function register(Request $request)
     {

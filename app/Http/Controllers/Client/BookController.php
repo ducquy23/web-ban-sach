@@ -10,11 +10,10 @@ use Illuminate\Http\Request;
 class BookController extends Controller
 {
     public function bookDetail(Request $request,$id) {
-        $categories = Category::all();
         $bookFeatured = Book::where('featured', 1)->latest()->first();
         $book = Book::find($id);
         $categoryId = $book->categories->first()->id; // Lấy id của danh mục sách
         $booksInCategory = Category::find($categoryId)->books; // Lấy sách thuộc danh mục
-        return view('client.product-detail',compact('categories','bookFeatured','book','booksInCategory'));
+        return view('client.product-detail',compact('bookFeatured','book','booksInCategory'));
     }
 }
