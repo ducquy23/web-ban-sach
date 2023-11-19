@@ -49,7 +49,7 @@
 											<ins>{{ number_format($book->price, 0, '.', ',') }} VNĐ</ins>
 {{--											<del>$27.20</del>--}}
 										</span>
-                                        <a class="tg-btn tg-btnstyletwo" href="javascript:void(0);">
+                                        <a class="tg-btn tg-btnstyletwo" href="{{route('cart.add',['id' => $book->id])}}">
                                             <i class="fa fa-shopping-basket"></i>
                                             <em>Thêm vào giỏ</em>
                                         </a>
