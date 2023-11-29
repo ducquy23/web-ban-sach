@@ -1,8 +1,7 @@
 <?php
-
 use Illuminate\Support\Facades\Facade;
 use Illuminate\Support\ServiceProvider;
-
+use Hardevine\Shoppingcart\Facades\Cart;
 return [
 
     /*
@@ -168,6 +167,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        ShoppingcartServiceProvider::class,
     ])->toArray(),
 
     /*
@@ -183,6 +183,7 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'Example' => App\Facades\Example::class,
+        'Cart' => Cart::class,
     ])->toArray(),
 
 ];
